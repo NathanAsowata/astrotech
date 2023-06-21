@@ -1,6 +1,7 @@
 import logo from "../assets/astrotech.png";
-import { Badge, Grid, Typography } from "@mui/material";
+import { Badge, Box, Grid, Typography } from "@mui/material";
 import { AccountCircle, ShoppingCart } from "@mui/icons-material";
+import SearchBar from "./SearchBar";
 
 function NavBar() {
   return (
@@ -28,27 +29,43 @@ function NavBar() {
         </Typography>
       </Grid>
 
-      <Grid item sm={7} textAlign={"center"}>
-        <Typography variant="body1">SearchBar comes here</Typography>
+      <Grid item sm={6.5} textAlign={"center"}>
+        <SearchBar />
       </Grid>
 
-      <Grid item sm={2.5} sx={{ display: "flex", alignItems: "center" }}>
+      <Grid
+        item
+        sm={3}
+        sx={{ 
+            display: "flex", 
+            alignItems: "center", 
+            justifyContent: "center" 
+        }}
+      >
         <Badge badgeContent={5} color="primary">
           <ShoppingCart color="secondary" fontSize="large" />
         </Badge>
 
-        <AccountCircle
-          color="secondary"
-          fontSize="large"
-          sx={{ marginLeft: 3 }}
-        />
-        <Typography
-          variant="body1"
-          fontWeight={"bold"}
-          sx={{ alignSelf: "end" }}
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            backgroundColor: "#dcdcdc",
+            width: "fit-content",
+            padding: 0.5,
+            marginLeft: 3,
+            borderRadius: 8,
+            "&:hover": {
+              backgroundColor: "#a9a9a9",
+              cursor: "pointer",
+            },
+          }}
         >
-          Hello, Nathan
-        </Typography>
+          <AccountCircle color="secondary" fontSize="large" />
+          <Typography variant="body1" fontWeight={"bold"}>
+            Hello, Nathan
+          </Typography>
+        </Box>
       </Grid>
     </Grid>
   );
