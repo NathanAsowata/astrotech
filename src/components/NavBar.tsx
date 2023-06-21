@@ -2,6 +2,7 @@ import logo from "../assets/astrotech.png";
 import { Badge, Box, Grid, Hidden, Typography } from "@mui/material";
 import { AccountCircle, ShoppingCart } from "@mui/icons-material";
 import SearchBar from "./SearchBar";
+import { Link } from "react-router-dom";
 
 function NavBar() {
 
@@ -16,11 +17,14 @@ function NavBar() {
         boxShadow: "0px 3px 6px #1c1c1c",
       }}
     >
+
+      {/* The site icon and logo */}
       <Grid 
         item 
         sm={2.5}
         xs={8}
       >
+        <Link to={"/"}>
         <img src={logo} alt="Astrotech Logo" width={30} />
         <Typography
           variant="h4"
@@ -33,6 +37,7 @@ function NavBar() {
         >
           strotech
         </Typography>
+        </Link>
       </Grid>
 
       <Grid 
